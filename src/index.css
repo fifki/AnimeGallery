@@ -1,13 +1,353 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  padding: 4rem 7.2rem;
+}
+.container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (max-width: 760px) {
+  .container {
+    padding: 4rem 2rem;
+  }
+}
+
+:root {
+  --color-primary: #111113ff;
+  --color-secondry: #333;
+  --color-danger: #ff4043;
+
+  --color-text-dark: #333333;
+  --color-text-medium: #757575;
+  --color-text-light: #fefefeff;
+
+  --color-body-dark: #111113ff;
+  --color-body-light: #fafafaff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: small;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333333;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-body-dark);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  color: var(--color-text-dark);
+  letter-spacing: -0.06em;
+  font-size: 4.25rem;
+  font-weight: normal;
+}
+
+h2 {
+  color: var(--color-text-dark);
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+h3 {
+  color: var(--color-text-dark);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.125rem;
+  color: var(--color-text-dark);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.text-secondary {
+  color: var(--color-text-medium);
+  font-size: 1.625rem;
+}
+.text-sm {
+  color: var(--color-text-dark);
+  font-size: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 0.5rem;
+  /* margin-left: 5rem; */
+}
+
+input [type='file'] {
+  display: none;
+}
+
+
+input[type="text"],
+input[type="number"],
+textarea,
+select,.tags-container {
+  width: 300px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  border: 1px solid var(--color-secondry);
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+select {
+  background-color: transparent;
+}
+.tags-container {
+  margin-top: .5rem;
+  height: 150px;
+  padding: 5px;
+  overflow: scroll;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus ,textarea:focus{
+  border-color: var(--color-text-medium);
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(17, 17, 19, 0.25);
+  padding-right: 2rem;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  max-width: 300px;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.ligne-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap:1rem
+}
+.btn {
+  color: var(--color-text-light);
+  border: 0;
+  max-height: 40px;
+  font-size: 1rem;
+  line-height: 1.3;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  outline: 0;
+  font-weight: bold;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--color-primary);
+  height: 60px;
+  transition: background-color 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-secondry);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondry {
+  background: var(--color-secondry);
+  background-color: transparent;
+  color: #333;
+  border: 1px solid var(--color-primary);
+  transition: background-color 0.5s;
+}
+
+.btn-secondry:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.btn-danger {
+  background: var(--color-text-light);
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  transition: background-color 0.5s;
+
+
+}
+
+.btn-danger:hover {
+  background: var(--color-danger);
+  color: var(--color-text-light);
+
+}
+
+.btn-ternary {
+  background: var(--color-secondry);
+  background-color: transparent;
+  color: #333;
+  border: 1px solid var(--color-primary);
+  transition: background-color 0.5s;
+}
+.btn-ternary:hover{
+  border: 2px solid var(--color-primary);
+
+}
+
+
+.container-suprem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+}
+
+.package {
+  margin-top: 2rem;
+  border: 1px solid var(--color-text-medium);
+}
+
+.package--bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.right {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  margin-right: 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.result {
+  margin-top: 7rem;
+  border: 2px solid #7db0fb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 0 4px rgba(24, 117, 255, 0.25);
+}
+
+.error {
+  margin-left: 5rem;
+  margin-top: 0.7rem;
+  font-size: small;
+  color: var(--color-danger);
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
+
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.icon--lg {
+  width: 60px;
+  height: 60px;
+}
+
+.icon--sm {
+  width: 30px;
+  height: 30px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+.icon--secondary {
+  fill: var(--color-text-medium);
+}
+
+.icon--white {
+  fill: #fff;
+}
+
+.icon-container {
+  background: #f3f9fa;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
+}
+
+@media screen and (max-width: 860px) {
+  body {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.625rem;
+    line-height: 1.3;
+  }
+  .container-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
