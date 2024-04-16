@@ -13,6 +13,7 @@
 .sidebar {
   grid-area: sidebar;
   background-color: rgba(6, 0, 3, 0.1) ;
+  height: 100vh;
 }
 
 .main-container {

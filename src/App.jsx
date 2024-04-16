@@ -5,12 +5,12 @@ import SideBar from './layout/SideBar';
 
 function App() {
   return (
-    <div class="main-container">
-    <div class="header">
+    <div className="main-container">
+    <div className="header">
       <Header brand='Anime'/>
     </div>
-    <div class="sidebar"><SideBar /></div>
-    <div class="main"><Main /></div>
+    <div className="sidebar"><SideBar /></div>
+    <div className="main"><Main /></div>
   </div>
   )
 }

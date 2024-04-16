@@ -144,10 +144,14 @@ select:hover {
 }
 
 .form {
+  padding: 10px;
+  background-color: white;
+  opacity: 1;
   display: flex;
   flex-direction: column;
   gap:5px;
   max-width: 300px;
+  overflow: hidden;
 }
 .form-group {
   margin-bottom: 1rem;

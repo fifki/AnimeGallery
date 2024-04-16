@@ -6,6 +6,7 @@ import hunter from '../assets/hunter.webp';
 import cyberpunk from '../assets/cyberpunk.webp';
 
 const Main = () => {
+    const [openModal, setOpenModal] = useState(false);
     const [animes,setAnimes] = useState([
         {
             id:1,
@@ -33,11 +34,15 @@ const Main = () => {
         },
 
     ])
+    function addAnime (){
+        setOpenModal(true)
+    }
   return (
 
   <div>
-        <AddAnime animes={animes} setAnimes={setAnimes}/>
+        <button className='btn btn-primary' onClick={addAnime}>Add Anime</button>
         <AnimeList data={animes} />
+       { openModal ? <AddAnime animes={animes} setAnimes={setAnimes} setOpen={setOpenModal}/>:<></>}
     </div>
   )
 }
