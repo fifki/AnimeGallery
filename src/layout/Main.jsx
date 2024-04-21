@@ -34,15 +34,30 @@ const Main = () => {
         },
 
     ])
-    function addAnime (){
-        setOpenModal(true)
+
+    function addAnime (newAnime){
+        setAnimes([...animes,newAnime])
+        setOpenModal(false)
+    }
+    function deleteAnime(id){
+        setAnimes(animes.filter(anime=>anime.id !== id));
+    }
+    function editAnime(editedAnime){
+        console.log(editedAnime);
+        setAnimes(animes.map(anime=> {
+            if(anime.id === editedAnime.id){
+                return editedAnime
+            }
+            return anime;
+        }))
+        
     }
   return (
 
   <div>
-        <button className='btn btn-primary' onClick={addAnime}>Add Anime</button>
-        <AnimeList data={animes} />
-       { openModal ? <AddAnime animes={animes} setAnimes={setAnimes} setOpen={setOpenModal}/>:<></>}
+        <button className='btn btn-primary' onClick={()=> setOpenModal(true)}>Add Anime</button>
+        <AnimeList data={animes} deleteAnime={deleteAnime} editAnime={editAnime}/>
+       { openModal ? <AddAnime addAnime={addAnime} setOpen={setOpenModal}/>:<></>}
     </div>
   )
 }

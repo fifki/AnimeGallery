@@ -151,7 +151,6 @@ select:hover {
   flex-direction: column;
   gap:5px;
   max-width: 300px;
-  overflow: hidden;
 }
 .form-group {
   margin-bottom: 1rem;

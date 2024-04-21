@@ -1,27 +1,10 @@
 import React, { useState } from 'react'
 import './Modal.css'
-const AddAnime = ({setOpen,addAnime}) => {
-    const [name, setName] = useState('');
-    const [rating, setRating] = useState(0);
-    const [image, setImage] = useState('');
-    const [description, setDescription] = useState('');
-
-
-    function addNewAnime(){
-      
-        const newAnime = {
-            id:Date.now(),
-            name,
-            rating,
-            image:baseImage[0],
-            description,
-            type:['action']
-        }
-        if(newAnime.name){
-          addAnime(newAnime);
-        }
-      
-    }
+const EditAnime = ({anime,setOpen,editAnime}) => {
+    const [name, setName] = useState(anime.name);
+    const [rating, setRating] = useState(anime.rating);
+    const [image] = useState(anime.image);
+    const [description, setDescription] = useState(anime.description);
 
     const [baseImage, setBaseImage] = useState();
 
@@ -49,6 +32,19 @@ const AddAnime = ({setOpen,addAnime}) => {
         }
     };
 
+    function handleEditAnime(anime){
+      const editedAnime = {
+        id:anime.id,
+        name,
+        rating,
+        image : baseImage ? baseImage[0]: image,
+        description,
+        type:['action']
+    }
+      editAnime(editedAnime);
+      setOpen(false);
+    }
+
   return (
     <div className='modal'>
       <div className='modal_container'>
@@ -63,21 +59,28 @@ const AddAnime = ({setOpen,addAnime}) => {
                             accept="image/png, image/gif,image/jpg, image/jpeg"
                         />
             <div>
-                    {baseImage && (
+                    {baseImage ? (
                         <img
                             src={baseImage[0]}
-                            alt={baseImage[1]}
+                            alt={name}
                             style={{
                                 maxWidth: "200px",
                                 maxHeight: "200px",
                             }}
                         />
-                    )}
+                    ):( <img
+                    src={image}
+                    alt={name}
+                    style={{
+                        maxWidth: "200px",
+                        maxHeight: "200px",
+                    }}
+                />)}
                 </div>
             <textarea  name="description" placeholder='description...' value={description} onChange={(e)=>setDescription(e.target.value)}/>
             <div className='modal_action'>
             <button className='btn btn-danger' onClick={()=>setOpen(false)}>Cancel</button>
-            <button className='btn btn-primary' onClick={addNewAnime}>Add Anime</button>
+            <button className='btn btn-primary' onClick={()=>handleEditAnime(anime)}>Edit Anime</button>
             </div>
           </div>
       </div>
@@ -86,4 +89,4 @@ const AddAnime = ({setOpen,addAnime}) => {
   )
 }
 
-export default AddAnime
+export default EditAnime

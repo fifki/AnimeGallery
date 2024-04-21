@@ -45,7 +45,7 @@
     font-size: 1rem;
     margin: 0;
   }
-  .books-gallery {
+  .animes-gallery {
     padding-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 20%);
@@ -53,7 +53,7 @@
   }
   
   @media screen and (max-width: 1080px) {
-    .books-gallery {
+    .animes-gallery {
       padding-top: 4rem;
       display: grid;
       justify-content: center;
@@ -64,7 +64,7 @@
   }
   
   @media screen and (max-width: 900px) {
-    .books-gallery {
+    .animes-gallery {
       padding-top: 4rem;
       display: grid;
       justify-content: center;
@@ -74,7 +74,7 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .books-gallery {
+    .animes-gallery {
       padding-top: 4rem;
       display: grid;
       justify-content: center;
@@ -84,7 +84,7 @@
     }
   }
   
-  .book-display {
+  .animes-display {
     display: flex;
     flex-direction: row;
     justify-content: space-around;

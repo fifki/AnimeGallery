@@ -2,11 +2,11 @@ import React from 'react'
 import AnimeItem from './AnimeItem'
 import './Anime.css'
 
-function AnimeList({data}) {
+function AnimeList({data, deleteAnime,editAnime}) {
 
   return ( 
-   <div  className="books-gallery">
-    {data.map(anime=><AnimeItem key={anime.id} data={anime} />)}
+   <div  className="animes-gallery">
+    {data.map(anime=><AnimeItem key={anime.id} data={anime} deleteAnime={deleteAnime} editAnime={editAnime}/>)}
    </div>
   )
 }

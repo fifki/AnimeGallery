@@ -9,7 +9,7 @@ function App() {
     <div className="header">
       <Header brand='Anime'/>
     </div>
-    <div className="sidebar"><SideBar /></div>
+    {/* <div className="sidebar"><SideBar /></div> */}
     <div className="main"><Main /></div>
   </div>
   )
