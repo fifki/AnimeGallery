@@ -50,7 +50,7 @@ const EditAnime = ({anime,setOpen,editAnime}) => {
       <div className='modal_container'>
           <div className='form'>
             <input type="text" name="name" placeholder='Name' value={name} onChange={(e)=>setName(e.target.value)}/>
-            <input type="number" name="rating" placeholder='Rating' value={rating} onChange={(e)=>setRating(e.target.value)}/>
+            <input type="number" name="rating" placeholder='Rating' value={rating} onChange={(e)=>setRating(e.target.value)} max={5} />
             <input
                             id="file-input"
                             type="file"

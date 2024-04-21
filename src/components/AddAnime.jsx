@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import './Modal.css'
+import DefaultImage from '../assets/anonym.png'
+
 const AddAnime = ({setOpen,addAnime}) => {
     const [name, setName] = useState('');
     const [rating, setRating] = useState(0);
-    const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
+    const [baseImage, setBaseImage] = useState();
 
-
-    function addNewAnime(){
-      
+    function addNewAnime(){   
         const newAnime = {
             id:Date.now(),
             name,
             rating,
-            image:baseImage[0],
+            image:baseImage ? baseImage[0] :  DefaultImage,
             description,
             type:['action']
         }
@@ -22,8 +22,6 @@ const AddAnime = ({setOpen,addAnime}) => {
         }
       
     }
-
-    const [baseImage, setBaseImage] = useState();
 
     const convertBase64 = (file) => {
         return new Promise((resolve, reject) => {
@@ -54,7 +52,7 @@ const AddAnime = ({setOpen,addAnime}) => {
       <div className='modal_container'>
           <div className='form'>
             <input type="text" name="name" placeholder='Name' value={name} onChange={(e)=>setName(e.target.value)}/>
-            <input type="number" name="rating" placeholder='Rating' value={rating} onChange={(e)=>setRating(e.target.value)}/>
+            <input type="number" name="rating" placeholder='Rating' value={rating} onChange={(e)=>setRating(e.target.value)} max={5} />
             <input
                             id="file-input"
                             type="file"
