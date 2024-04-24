@@ -34,3 +34,13 @@ anime-project-frontend/
 ├── package.json # Project metadata and dependencies
 ├── README.md # Project documentation (you are here)
 └── ...
+
+# Title 
+
+.
+├── ...
+├── test                    # Test files (alternatively `spec` or `tests`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   └── unit                # Unit tests
+└── ...
