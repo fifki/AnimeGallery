@@ -12,9 +12,6 @@ Welcome to the Anime Project frontend! This project is a web application built u
 ## Technologies Used:
 
 - React 18: JavaScript library for building user interfaces.
-- React Router: Library for handling navigation and routing in React applications.
-- Axios: Promise-based HTTP client for making API requests.
-- Bootstrap: Frontend framework for styling and layout.
 
 ## Project structure:
 anime-project-frontend/
