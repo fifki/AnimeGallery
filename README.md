@@ -14,7 +14,7 @@ Welcome to the Anime Project frontend! This project is a web application built u
 - React 18: JavaScript library for building user interfaces.
 
 ## Project structure:
-anime-project-frontend/
+```anime-project-frontend/
 │
 ├── public/ # Public assets and index.html
 │ └── index.html
@@ -33,14 +33,4 @@ anime-project-frontend/
 ├── .gitignore # Specifies intentionally untracked files to ignore
 ├── package.json # Project metadata and dependencies
 ├── README.md # Project documentation (you are here)
-└── ...
-
-# Title test
-
-.
-├── ...
-├── test                    # Test files (alternatively `spec` or `tests`)
-│   ├── benchmarks          # Load and stress tests
-│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
-│   └── unit                # Unit tests
-└── ...
+└── ...```
