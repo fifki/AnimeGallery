@@ -1,6 +1,7 @@
 # AnimeGallery 
   ## Frontend Using React 
-  
+![alt text](https://github.com/fifki/AnimeGallery/blob/main/Readmepic/Capture%20d'%C3%A9cran%202024-04-30%20012613.png?raw=true)
+ 
 
 Welcome to the Anime Project frontend! This project is a web application built using React 18, allowing users to browse, add, delete, and edit anime entries. Below you'll find information on how to set up and use the frontend application.
 
