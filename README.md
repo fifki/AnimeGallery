@@ -1,5 +1,5 @@
 # AnimeGallery 
-  ## Frontend Using React 
+  #### Frontend Using React 
 ![alt text](https://github.com/fifki/AnimeGallery/blob/main/Readmepic/Capture%20d'%C3%A9cran%202024-04-30%20012613.png?raw=true)
  
 
