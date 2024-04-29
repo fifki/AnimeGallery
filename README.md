@@ -1,4 +1,6 @@
-# Anime Project (Frontend)
+# AnimeGallery 
+  ## Frontend Using React 
+  
 
 Welcome to the Anime Project frontend! This project is a web application built using React 18, allowing users to browse, add, delete, and edit anime entries. Below you'll find information on how to set up and use the frontend application.
 
